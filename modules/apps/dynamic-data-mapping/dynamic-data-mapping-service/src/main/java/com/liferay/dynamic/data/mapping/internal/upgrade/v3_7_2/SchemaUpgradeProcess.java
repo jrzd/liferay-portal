@@ -30,14 +30,16 @@ public class SchemaUpgradeProcess extends UpgradeProcess {
 	private void _alterTables() throws Exception {
 		try (LoggingTimer loggingTimer = new LoggingTimer()) {
 			if (!hasColumnType("DDMFormInstance", "description", "TEXT null")) {
-				alterColumnType("DDMFormInstance", "description", "TEXT null");
+				//alterColumnType("DDMFormInstance", "description", "TEXT null");
+				System.out.println("DSICO: removida a alteração coluna DDMFormInstance.description");
 			}
 
 			if (!hasColumnType(
 					"DDMFormInstanceVersion", "description", "TEXT null")) {
 
-				alterColumnType(
-					"DDMFormInstanceVersion", "description", "TEXT null");
+				//alterColumnType(
+					//"DDMFormInstanceVersion", "description", "TEXT null");
+					System.out.println("DSICO: removida a alteração coluna DDMFormInstanceVersion.description");
 			}
 		}
 	}

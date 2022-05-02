@@ -28,8 +28,10 @@ public class UpgradeLayout extends UpgradeProcess {
 			alterTableDropColumn("Layout", "head");
 		}
 
+		//Alterado pela DSICO
 		if (!hasColumnType("Layout", "description", "TEXT null")) {
-			alterColumnType("Layout", "description", "TEXT null");
+			//alterColumnType("Layout", "description", "TEXT null");
+			System.out.println("DSICO: removida a alteração coluna layout.description");
 		}
 
 		if (!hasColumn("Layout", "masterLayoutPlid")) {

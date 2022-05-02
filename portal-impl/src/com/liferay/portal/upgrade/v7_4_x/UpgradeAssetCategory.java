@@ -25,12 +25,16 @@ public class UpgradeAssetCategory extends UpgradeProcess {
 
 	@Override
 	protected void doUpgrade() throws Exception {
+		//Alterado pela DSICO
 		if (!hasColumnType("AssetCategory", "title", "TEXT null")) {
-			alterColumnType("AssetCategory", "title", "TEXT null");
+			//alterColumnType("AssetCategory", "title", "TEXT null");
+			System.out.println("DSICO: removida a alteração coluna AssetEntry.title");
 		}
 
+		//Alterado pela DSICO
 		if (!hasColumnType("AssetCategory", "description", "TEXT null")) {
-			alterColumnType("AssetCategory", "description", "TEXT null");
+			//alterColumnType("AssetCategory", "description", "TEXT null");
+			System.out.println("DSICO: removida a alteração coluna AssetEntry.desciption");
 		}
 
 		if (!hasColumn("AssetCategory", "externalReferenceCode")) {

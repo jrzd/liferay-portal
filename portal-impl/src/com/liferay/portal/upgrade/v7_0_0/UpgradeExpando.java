@@ -23,9 +23,16 @@ public class UpgradeExpando extends UpgradeProcess {
 
 	@Override
 	protected void doUpgrade() throws Exception {
-		alterColumnType("ExpandoColumn", "defaultData", "TEXT null");
-
-		alterColumnType("ExpandoValue", "data_", "TEXT null");
+		//Alterado pela DSICO
+		if (!hasColumnType("ExpandoColumn", "defaultData", "TEXT null")) {
+			//alterColumnType("ExpandoColumn", "defaultData", "TEXT null");
+			System.out.println("DSICO: removida a alteração coluna ExpandoColumn.defaultData");
+		}
+		//Alterado pela DSICO
+		if (!hasColumnType("ExpandoValue", "data_", "TEXT null")) {
+			//alterColumnType("ExpandoValue", "data_", "TEXT null");
+			System.out.println("DSICO: removida a alteração coluna ExpandoValue.data_");
+		}
 	}
 
 }

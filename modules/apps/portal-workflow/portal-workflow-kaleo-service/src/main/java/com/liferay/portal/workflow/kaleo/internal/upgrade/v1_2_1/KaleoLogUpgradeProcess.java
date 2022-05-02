@@ -22,8 +22,15 @@ import com.liferay.portal.kernel.upgrade.UpgradeProcess;
 public class KaleoLogUpgradeProcess extends UpgradeProcess {
 
 	@Override
+	
+
 	protected void doUpgrade() throws Exception {
-		alterColumnType("KaleoLog", "comment_", "TEXT null");
+	
+	//Alterado pela DSICO
+	if (!hasColumnType("KaleoLog", "comment_", "TEXT null")) {
+		//alterColumnType("KaleoLog", "comment_", "TEXT null");
+		System.out.println("DSICO: removida a alteração coluna KaleoLog.comment_");
+		
 	}
 
 }

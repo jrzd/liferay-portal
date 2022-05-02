@@ -38,7 +38,11 @@ public class SchemaUpgradeProcess extends UpgradeProcess {
 			"DDMStructureKey VARCHAR(75) null");
 		alterColumnName(
 			"JournalArticle", "templateId", "DDMTemplateKey VARCHAR(75) null");
-		alterColumnType("JournalArticle", "description", "TEXT null");
+		
+		//Alterado pela DSICO
+		if (!hasColumnType("JournalArticle", "description", "TEXT null")) {
+			alterColumnType("JournalArticle", "description", "TEXT null");
+		}
 
 		alterColumnName(
 			"JournalFeed", "structureId", "DDMStructureKey TEXT null");

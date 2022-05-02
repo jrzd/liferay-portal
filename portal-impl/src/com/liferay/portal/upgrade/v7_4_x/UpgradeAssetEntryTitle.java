@@ -23,8 +23,10 @@ public class UpgradeAssetEntryTitle extends UpgradeProcess {
 
 	@Override
 	protected void doUpgrade() throws Exception {
+		//Alterado pela DSICO
 		if (!hasColumnType("AssetEntry", "title", "TEXT null")) {
-			alterColumnType("AssetEntry", "title", "TEXT null");
+			//alterColumnType("AssetEntry", "title", "TEXT null");
+			System.out.println("DSICO: removida a alteração coluna AssetEntry.title");
 		}
 	}
 

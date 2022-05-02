@@ -67,9 +67,17 @@ public class UpgradeAsset extends UpgradeProcess {
 
 	@Override
 	protected void doUpgrade() throws Exception {
-		alterColumnType("AssetEntry", "description", "TEXT null");
-		alterColumnType("AssetEntry", "summary", "TEXT null");
-
+		
+		//Alterado pela DSICO
+		if (!hasColumnType("AssetEntry", "description", "TEXT null")) {
+        	alterColumnType("AssetEntry", "description", "TEXT null");
+		}
+		
+		//Alterado pela DSICO
+		if (!hasColumnType("AssetEntry", "summary", "TEXT null")) {
+        	alterColumnType("AssetEntry", "summary", "TEXT null");
+		}
+		
 		deleteOrphanedAssetEntries();
 		updateAssetEntries();
 		updateAssetVocabularies();

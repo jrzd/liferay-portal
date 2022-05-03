@@ -86,11 +86,13 @@ public class LayoutPageTemplateServiceUpgrade
 			"2.1.0", "3.0.0",
 			new com.liferay.layout.page.template.internal.upgrade.v3_0_0.
 				LayoutPageTemplateStructureUpgradeProcess());
-
-		registry.register(
-			"3.0.0", "3.0.1",
-			UpgradeStepFactory.alterColumnTypes(
-				"LayoutPageTemplateStructureRel", "TEXT null", "data_"));
+		
+		//Alterado pela DSICO
+		//registry.register(
+		//	"3.0.0", "3.0.1",
+		//	UpgradeStepFactory.alterColumnTypes(
+		//		"LayoutPageTemplateStructureRel", "TEXT null", "data_"));
+		System.out.println("DSICO: removida a alteração coluna LayoutPageTemplateStructureRel.data_");
 
 		registry.register(
 			"3.0.1", "3.1.0",

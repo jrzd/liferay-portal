@@ -35,9 +35,11 @@ public class SchemaUpgradeProcess extends UpgradeProcess {
 			alterColumnName("DDMContent", "xml", "data_ TEXT null");
 
 			alterColumnName("DDMStructure", "xsd", "definition TEXT null");
-			alterColumnType("DDMStructure", "description", "TEXT null");
-
-			alterColumnType("DDMTemplate", "description", "TEXT null");
+			//Alterado pela DSICO
+			//alterColumnType("DDMStructure", "description", "TEXT null");
+			System.out.println("DSICO: removida a alteração coluna DDMStructure.description");
+			//alterColumnType("DDMTemplate", "description", "TEXT null");
+			System.out.println("DSICO: removida a alteração coluna DDMTemplate.description");
 		}
 	}
 

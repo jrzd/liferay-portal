@@ -26,11 +26,11 @@ public class KaleoLogUpgradeProcess extends UpgradeProcess {
 
 	protected void doUpgrade() throws Exception {
 	
-	//Alterado pela DSICO
-	if (!hasColumnType("KaleoLog", "comment_", "TEXT null")) {
-		//alterColumnType("KaleoLog", "comment_", "TEXT null");
-		System.out.println("DSICO: removida a alteração coluna KaleoLog.comment_");
-		
+		//Alterado pela DSICO
+		if (!hasColumnType("KaleoLog", "comment_", "TEXT null")) {
+			//alterColumnType("KaleoLog", "comment_", "TEXT null");
+			System.out.println("DSICO: removida a alteração coluna KaleoLog.comment_");
+		}
 	}
 
 }

@@ -93,7 +93,8 @@ public class LayoutPageTemplateServiceUpgrade
 		//	UpgradeStepFactory.alterColumnTypes(
 		//		"LayoutPageTemplateStructureRel", "TEXT null", "data_"));
 		System.out.println("DSICO: removida a alteração coluna LayoutPageTemplateStructureRel.data_");
-
+		registry.register("3.0.0", "3.0.1", new DummyUpgradeStep());
+		
 		registry.register(
 			"3.0.1", "3.1.0",
 			new MVCCVersionUpgradeProcess() {

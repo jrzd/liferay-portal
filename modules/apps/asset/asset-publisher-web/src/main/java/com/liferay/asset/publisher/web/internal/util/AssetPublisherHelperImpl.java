@@ -99,6 +99,8 @@ import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Modified;
 import org.osgi.service.component.annotations.Reference;
 
+import com.liferay.asset.publisher.web.internal.util.AssetCategoryTitleComparator;
+
 /**
  * @author Eudaldo Alonso
  */
@@ -1103,9 +1105,15 @@ public class AssetPublisherHelperImpl implements AssetPublisherHelper {
 
 		List<AssetEntryResult> assetEntryResults = new ArrayList<>();
 
+		//Ordem decrescente quando for o vocabulário Ano
+		//20324 - Vocabulário Ano
+		//ordem - true para ascendente e false para descendente
+		Boolean ordem = (assetVocabularyId != 20324);
+		AssetCategoryTitleComparator assetCategoryTitleComparator = new AssetCategoryTitleComparator(ordem);
+
 		List<AssetCategory> assetCategories =
 			_assetCategoryLocalService.getVocabularyRootCategories(
-				assetVocabularyId, QueryUtil.ALL_POS, QueryUtil.ALL_POS, null);
+				assetVocabularyId, QueryUtil.ALL_POS, QueryUtil.ALL_POS, assetCategoryTitleComparator);
 
 		assetEntryQuery.setClassNameIds(classNameIds);
 
